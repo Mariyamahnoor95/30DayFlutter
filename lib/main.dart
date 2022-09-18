@@ -18,35 +18,38 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
-          color: Colors.black,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.red,
-                  width: 100,
-                  height: 100,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.yellow,
-                  width: 100,
-                  height: 100,
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  color: Colors.green,
-                  width: 100,
-                  height: 100,
-                ),
-              ],
+        child: Align(
+          alignment: Alignment.bottomRight,
+          child: Container(
+            color: Colors.black,
+            width: 200,
+            height: 400,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    color: Colors.red,
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    color: Colors.yellow,
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    color: Colors.green,
+                    width: 100,
+                    height: 100,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
