@@ -16,30 +16,38 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Wellcome to My App "),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Container(
-          padding: const EdgeInsets.all(10),
-          alignment: Alignment.center,
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: Colors.blueAccent,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [ BoxShadow(
-                  color: Colors.grey[400],
-                  blurRadius: 5,
-                  offset: const Offset(2.0, 10.0))
-            ],
-           
-            gradient:
-                LinearGradient(colors: [Colors.black, Colors.yellow.shade400]),
-          ),
-          child: const Text("hey there",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
+          color: Colors.black,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  color: Colors.red,
+                  width: 100,
+                  height: 100,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  color: Colors.yellow,
+                  width: 100,
+                  height: 100,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  color: Colors.green,
+                  width: 100,
+                  height: 100,
+                ),
+              ],
+            ),
           ),
         ),
       ),
