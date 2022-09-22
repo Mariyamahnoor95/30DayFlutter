@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../change_name_card.dart';
 import '../drawer.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,9 +11,20 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   TextEditingController _nameController = TextEditingController();
   var mytext = "change me";
+  var urll = "https://jsonplaceholder.typicode.com/photos";
+  var data;
+
   @override
   void initState() {
     super.initState();
+    getData();
+  }
+
+  getData() async {
+    var res = await http.get(Uri.parse(urll));
+    data = jsonDecode(res.body);
+    // print(res.body);
+    setState(() {});
   }
 
   @override
@@ -24,14 +35,26 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Wellcome to My App "),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.8),
-        child: SingleChildScrollView(
-          child: Card(
-            child:
-                ChangeNameCard(mytext: mytext, nameController: _nameController),
-          ),
-        ),
-      ),
+          padding: const EdgeInsets.all(10.8),
+          child: data != null
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: ListTile(
+                        title: Text(data[index]["title"]),
+                        subtitle: Text("ID : ${data[index]["id"]}"),
+                        leading: Image.network(data[index]["url"]),
+                      ),
+                    );
+                  },
+                  itemCount: data.length,
+                )
+              : Center(
+                  child: CircularProgressIndicator(),
+                )),
       drawer: DrawerSide(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
