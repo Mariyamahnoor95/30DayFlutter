@@ -37,9 +37,7 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
           padding: const EdgeInsets.all(10.8),
           child: data != null
-              ? GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
+              ? ListView.builder(
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.all(8.0),
