@@ -1,5 +1,6 @@
+import 'package:awesome_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
-import '../drawer.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
