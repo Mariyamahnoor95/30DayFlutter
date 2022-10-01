@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:awesome_app/pages/home_page.dart';
 import 'package:awesome_app/pages/loginPage.dart';
+import 'package:awesome_app/utils/routes.dart';
 import 'package:awesome_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       routes: {
-        "/login": ((context) => LoginPage()),
-        "/home": ((context) => HomePage())
+        "/": ((context) => LoginPage()),
+        MyRoutes.homeRoutes: ((context) => HomePage()),
+        MyRoutes.loginRoutes: ((context) => LoginPage())
       },
     );
   }

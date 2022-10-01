@@ -1,3 +1,4 @@
+import 'package:awesome_app/utils/routes.dart';
 import 'package:awesome_app/widgets/bg_image.dart';
 import 'package:awesome_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, "/home");
+      await Navigator.pushNamed(context, MyRoutes.homeRoutes);
       setState(() {
         changeButton = false;
       });
