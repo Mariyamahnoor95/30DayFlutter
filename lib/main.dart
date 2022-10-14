@@ -1,7 +1,8 @@
-import 'dart:js';
+import 'package:awesome_app/pages/catalog_page.dart';
+import 'package:awesome_app/pages/myhomee.dart';
 
-import 'package:awesome_app/pages/home_page.dart';
 import 'package:awesome_app/pages/loginPage.dart';
+import 'package:awesome_app/pages/startup_namer.dart';
 import 'package:awesome_app/utils/routes.dart';
 import 'package:awesome_app/widgets/themes.dart';
 import 'package:flutter/material.dart';
@@ -18,14 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Awesome App",
-      home: LoginPage(),
+      home: const MyHome(),
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       routes: {
-        "/": ((context) => LoginPage()),
-        MyRoutes.homeRoutes: ((context) => HomePage()),
+        MyRoutes.catalogRoute: ((context) => HomePage() ),
         MyRoutes.loginRoutes: ((context) => LoginPage())
       },
     );

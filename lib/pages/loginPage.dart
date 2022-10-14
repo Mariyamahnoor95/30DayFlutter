@@ -1,6 +1,6 @@
 import 'package:awesome_app/utils/routes.dart';
 import 'package:awesome_app/widgets/bg_image.dart';
-import 'package:awesome_app/pages/home_page.dart';
+import 'package:awesome_app/pages/catalog_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoutes);
+      await Navigator.pushNamed(context, MyRoutes.catalogRoute);
       setState(() {
         changeButton = false;
       });
@@ -103,13 +103,18 @@ class _LoginPageState extends State<LoginPage> {
                                       width: changeButton ? 70 : 150,
                                       height: 50,
                                       alignment: Alignment.center,
-                                      child: Text(
-                                        "login",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      ),
+                                      child: changeButton
+                                          ? Icon(
+                                              Icons.done,
+                                              color: Colors.white,
+                                            )
+                                          : Text(
+                                              "login",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20),
+                                            ),
                                     ),
                                   ),
                                 ),

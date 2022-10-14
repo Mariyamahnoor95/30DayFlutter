@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Wellcome to My App "),
       ),
       body: Padding(
-          padding: const EdgeInsets.all(10.8),
+          padding: EdgeInsets.all(8.0),
           child: data != null
               ? ListView.builder(
                   itemBuilder: (context, index) {
