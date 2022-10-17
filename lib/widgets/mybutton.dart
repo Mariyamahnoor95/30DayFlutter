@@ -12,13 +12,15 @@ class MyButton extends StatelessWidget {
       onTap: (() => Navigator.pushNamed(context, MyRoutes.loginRoutes)),
       child: Container(
         height: 50,
+        width: 150,
         padding: const EdgeInsets.all(16.0),
         margin: EdgeInsets.all(8.0),
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(7.0),
           color: Colors.lightGreen,
         ),
-        child: const Text('sign in'),
+        child: const Text(' Sign In '),
       ),
     );
   }

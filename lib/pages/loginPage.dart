@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                                       changeButton ? 20 : 10),
                                   child: InkWell(
                                     onTap: () => moveToHome(context),
-                                    child: AnimatedContainer(
+                                    child: AnimatedContainer(  //can use ink widget for ripple effect
                                       duration: Duration(seconds: 1),
                                       width: changeButton ? 70 : 150,
                                       height: 50,
