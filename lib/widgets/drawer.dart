@@ -21,7 +21,7 @@ class DrawerSide extends StatelessWidget {
               accountName: Text(" Mariyam"),
               accountEmail: Text("azhhbh@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/mahnoorpic.jpeg"),
+                backgroundImage: AssetImage("assets/images/camerasilver.jpeg"),
               )),
           ListTile(
             leading: Icon(Icons.person),
